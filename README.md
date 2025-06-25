@@ -19,17 +19,34 @@ A Python package for genomic distance matrix analysis and visualization using Mu
 
 ## Installation
 
-### From PyPI (when published)
+### Option 1: No Installation Required! 🚀
+
+The easiest way to get started - no installation needed:
+
+```bash
+# Clone the repository
+git clone https://github.com/Markkunitomi/genome-matrix-mds.git
+cd genome-matrix-mds
+
+# Run immediately (requires numpy, pandas, scikit-learn, matplotlib)
+python run.py        # Interactive quick start
+# or
+python main.py example    # Direct example run
+```
+
+### Option 2: Full Installation
+
+#### From PyPI (when published)
 
 ```bash
 pip install genome-matrix-mds
 ```
 
-### Development Installation
+#### Development Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/genome-matrix-mds.git
+git clone https://github.com/Markkunitomi/genome-matrix-mds.git
 cd genome-matrix-mds
 
 # Install in development mode
@@ -41,7 +58,20 @@ make dev-setup
 
 ## Quick Start
 
-### Command Line Usage
+### Standalone Scripts (No Installation)
+
+```bash
+# Super simple - just run this!
+python run.py
+
+# Or use the main script directly
+python main.py example                    # Run example with synthetic data
+python main.py mds data.dist             # Create MDS plot  
+python main.py dbscan data.dist           # Run clustering
+python main.py sweep data.dist            # Optimize parameters
+```
+
+### Command Line Usage (After Installation)
 
 #### MDS Analysis
 ```bash
@@ -90,6 +120,21 @@ stats, labels = analyzer.run_dbscan(distance_df.values, species_labels, epsilon=
 print(f"Number of clusters: {stats[2]}")
 print(f"Homogeneity score: {stats[4]:.3f}")
 ```
+
+## Repository Structure
+
+```
+├── src/genome_matrix_mds/     # Main package code
+├── tests/                     # Test suite
+├── examples/                  # Usage examples
+├── notebook_explorations/     # Original research notebooks (historical)
+├── Data/                      # Example data files
+├── main.py                    # Standalone script (no installation needed)
+├── run.py                     # Interactive quick start
+└── README.md                  # This file
+```
+
+**Note**: The `notebook_explorations/` directory contains the original Jupyter notebooks with detailed research workflows. The modern Python package provides the same functionality in a more convenient, installable format.
 
 ## Data Format
 
